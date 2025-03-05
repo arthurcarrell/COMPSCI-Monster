@@ -49,16 +49,16 @@ namespace CSPreALevelSkeleton
             return Choice;
         }
 
-        public static string ReadLineSafely() {
+        public static string ReadLineSafely(int minChars=1, int maxChars=Int32.MaxValue) {
             // Console.ReadLine() but it does not return a null value
 
             // because Console.ReadLine() *could* return a nullable value output should be marked as nullable with a '?'
             string? output;
 
-            // if Console.ReadLine() returns null; loop
+            // if Console.ReadLine() returns null or its not in the bounds of min and max chars, loop
             do {
                 output = Console.ReadLine();
-            } while (output == null);
+            } while (output == null || output.Length < minChars || output.Length > maxChars);
 
             // return output
             return output;

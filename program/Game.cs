@@ -105,7 +105,11 @@ namespace CSPreALevelSkeleton
         public char GetMove()
         {
             char Move;
-            Move = char.Parse(Console.ReadLine());
+
+            // check if Console.ReadLine() does not return null
+            
+
+            Move = char.Parse(ReadLineSafely());
             Console.WriteLine();
             return Char.ToUpper(Move);
         }

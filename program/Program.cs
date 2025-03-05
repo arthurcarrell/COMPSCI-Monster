@@ -44,9 +44,24 @@ namespace CSPreALevelSkeleton
         public static int GetMainMenuChoice()
         {
             int Choice;
-            Choice = int.Parse(Console.ReadLine());
+            Choice = int.Parse(ReadLineSafely());
             Console.WriteLine();
             return Choice;
+        }
+
+        public static string ReadLineSafely() {
+            // Console.ReadLine() but it does not return a null value
+
+            // because Console.ReadLine() *could* return a nullable value output should be marked as nullable with a '?'
+            string? output;
+
+            // if Console.ReadLine() returns null; loop
+            do {
+                output = Console.ReadLine();
+            } while (output == null);
+
+            // return output
+            return output;
         }
     }
 }

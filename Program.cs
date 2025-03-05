@@ -118,7 +118,7 @@ namespace CSPreALevelSkeleton
                 char Move;
                 Move = char.Parse(Console.ReadLine());
                 Console.WriteLine();
-                return Move;
+                return Char.ToUpper(Move);
             }
 
             public void DisplayWonGameMessage()
@@ -126,12 +126,14 @@ namespace CSPreALevelSkeleton
                 Console.WriteLine("Well done! you have found the flask containing the Styxian potion.");
                 Console.WriteLine("You have won the game of MONSTER!");
                 Console.WriteLine();
+                Console.ReadLine();
             }
 
             public void DisplayTrapMessage()
             {
                 Console.WriteLine("Oh no! You have set off a trap. Watch out, the monster is now awake!");
                 Console.WriteLine();
+                Console.ReadLine();
             }
 
             public void DisplayLostGameMessage()
@@ -139,13 +141,15 @@ namespace CSPreALevelSkeleton
                 Console.WriteLine("ARGHHHHHH! The monster has eaten you. GAME OVER.");
                 Console.WriteLine("Maybe you will have better luck next time you play MONSTER!");
                 Console.WriteLine();
+                Console.ReadLine();
             }
 
             public Boolean CheckValidMove(char Direction)
             {
                 Boolean ValidMove;
                 ValidMove = true;
-                if (!(Direction == 'N' || Direction == 'S' || Direction == 'W' || Direction == 'E' || Direction == 'M'))
+                char[] possibleDirections = new char[] {'N','S','E','W','M'};
+                if (!possibleDirections.Contains(Char.ToUpper(Direction)))
                 {
                     ValidMove = false;
                 }
@@ -232,6 +236,9 @@ namespace CSPreALevelSkeleton
 
             public void Display(Boolean MonsterAwake)
             {
+                // clear the console to make it more easier to read.
+                Console.Clear();
+
                 int Count1;
                 int Count2;
                 for (Count1 = 0; Count1 <= NS; Count1++)
@@ -408,11 +415,13 @@ namespace CSPreALevelSkeleton
 
         public static void DisplayMenu()
         {
+            // clear the console and prompt the user to make a choice
+            Console.Clear();
             Console.WriteLine("MAIN MENU");
             Console.WriteLine();
             Console.WriteLine("1. Start new game");
             Console.WriteLine("2. Play training game");
-            Console.WriteLine("9. Quit");
+            Console.WriteLine("3. Quit");
             Console.WriteLine();
             Console.Write("Please enter your choice: ");
         }

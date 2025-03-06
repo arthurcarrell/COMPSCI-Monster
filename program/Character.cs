@@ -2,21 +2,39 @@ namespace CSPreALevelSkeleton
 {
     public class Character : Item
     {
+
+        private bool IsOutOfBounds(int squareToMove, int bound) 
+        {
+            bool outOfBounds = false;
+
+            if (squareToMove > bound) outOfBounds = true;
+            if (squareToMove < 0) outOfBounds = true;
+            
+            return outOfBounds;
+        }
         public void MakeMove(char Direction)
         {
             switch (Direction)
             {
                 case 'N':
-                    NoOfCellsSouth = NoOfCellsSouth - 1;
+                    if(!IsOutOfBounds(NoOfCellsSouth-1, Program.NS)) {
+                        NoOfCellsSouth--;
+                    }
                     break;
                 case 'S':
-                    NoOfCellsSouth = NoOfCellsSouth + 1;
+                    if(!IsOutOfBounds(NoOfCellsSouth+1, Program.NS)) {
+                        NoOfCellsSouth++;
+                    }
                     break;
                 case 'W':
-                    NoOfCellsEast = NoOfCellsEast - 1;
+                    if(!IsOutOfBounds(NoOfCellsEast-1, Program.WE)) {
+                        NoOfCellsEast--;
+                    }
                     break;
                 case 'E':
-                    NoOfCellsEast = NoOfCellsEast + 1;
+                    if(!IsOutOfBounds(NoOfCellsEast+1, Program.WE)) {
+                        NoOfCellsEast++;
+                    }
                     break;
             }
         }

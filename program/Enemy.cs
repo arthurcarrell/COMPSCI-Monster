@@ -4,7 +4,7 @@ namespace CSPreALevelSkeleton
 {
     public class Enemy : Item
     {
-        private Boolean Awake;
+        private bool Awake;
 
         public virtual void MakeMove(CellReference PlayerPosition)
         {
@@ -28,7 +28,7 @@ namespace CSPreALevelSkeleton
             }
         }
 
-        public Boolean GetAwake()
+        public bool GetAwake()
         {
             return Awake;
         }

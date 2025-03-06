@@ -12,10 +12,10 @@ namespace CSPreALevelSkeleton
         private Item Flask = new Item();
         private Trap Trap1 = new Trap();
         private Trap Trap2 = new Trap();
-        private Boolean TrainingGame;
+        private bool TrainingGame;
 
 
-        public Game(Boolean IsATrainingGame)
+        public Game(bool IsATrainingGame)
         {
             TrainingGame = IsATrainingGame;
             SetUpGame();
@@ -25,10 +25,10 @@ namespace CSPreALevelSkeleton
         public void Play()
         {
             int Count;
-            Boolean Eaten;
-            Boolean FlaskFound;
+            bool Eaten;
+            bool FlaskFound;
             char MoveDirection;
-            Boolean ValidMove;
+            bool ValidMove;
             CellReference Position;
             Eaten = false;
             FlaskFound = false;
@@ -80,7 +80,7 @@ namespace CSPreALevelSkeleton
                             Console.WriteLine("Press Enter key to continue");
                             Console.ReadLine();
                             Cavern.Display(Monster.GetAwake());
-                            Count = Count + 1;
+                            Count++;
                         } while (Count != 2 && !Eaten);
                     }
                     if (Eaten)
@@ -133,9 +133,9 @@ namespace CSPreALevelSkeleton
             Console.ReadLine();
         }
 
-        public Boolean CheckValidMove(char Direction)
+        public bool CheckValidMove(char Direction)
         {
-            Boolean ValidMove;
+            bool ValidMove;
             ValidMove = true;
             char[] possibleDirections = new char[] {'N','S','E','W','M'};
             if (!possibleDirections.Contains(Char.ToUpper(Direction)))

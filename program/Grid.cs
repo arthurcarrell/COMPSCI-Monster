@@ -18,7 +18,7 @@ namespace CSPreALevelSkeleton {
             }
         }
 
-        public void Display(Boolean MonsterAwake)
+        public void Display(bool MonsterAwake)
         {
             // clear the console to make it more easier to read.
             Console.Clear();
@@ -50,7 +50,7 @@ namespace CSPreALevelSkeleton {
             CavernState[Position.NoOfCellsSouth, Position.NoOfCellsEast] = Item;
         }
 
-        public Boolean IsCellEmpty(CellReference Position)
+        public bool IsCellEmpty(CellReference Position)
         {
             if (CavernState[Position.NoOfCellsSouth, Position.NoOfCellsEast] == ' ')
                 return true;

@@ -2,9 +2,9 @@ namespace CSPreALevelSkeleton
 {
     public class Trap : Item
     {
-        private Boolean Triggered;
+        private bool Triggered;
 
-        public Boolean GetTriggered()
+        public bool GetTriggered()
         {
             return Triggered;
         }

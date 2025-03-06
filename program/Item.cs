@@ -21,7 +21,7 @@ namespace CSPreALevelSkeleton
             NoOfCellsSouth = Position.NoOfCellsSouth;
         }
 
-        public Boolean CheckIfSameCell(CellReference Position)
+        public bool CheckIfSameCell(CellReference Position)
         {
             if (NoOfCellsEast == Position.NoOfCellsEast && NoOfCellsSouth == Position.NoOfCellsSouth)
             {

@@ -33,12 +33,9 @@ namespace CSPreALevelSkeleton
             return Awake;
         }
 
-        public virtual void ChangeSleepStatus()
+        public virtual void ToggleSleepStatus()
         {
-            if (!Awake)
-                Awake = true;
-            else
-                Awake = false;
+            Awake = !Awake;
         }
 
         public Enemy()

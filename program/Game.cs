@@ -57,7 +57,7 @@ namespace CSPreALevelSkeleton
                     // triggered one of the traps in the cavern
                     if (!Monster.GetAwake() && !FlaskFound && !Eaten && ((Player.CheckIfSameCell(Trap1.GetPosition()) && !Trap1.GetTriggered()) || (Player.CheckIfSameCell(Trap2.GetPosition()) && !Trap2.GetTriggered())))
                     {
-                        Monster.ChangeSleepStatus();
+                        Monster.ToggleSleepStatus();
                         DisplayTrapMessage();
                         Cavern.Display(Monster.GetAwake());
                     }

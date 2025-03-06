@@ -12,7 +12,7 @@ namespace CSPreALevelSkeleton
         static void Main(string[] args)
         {
             int Choice = 0;
-            while (Choice != 9)
+            while (Choice != 3)
             {
                 DisplayMenu();
                 Choice = GetMainMenuChoice();

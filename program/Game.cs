@@ -1,6 +1,7 @@
 using static CSPreALevelSkeleton.Item;
 using static CSPreALevelSkeleton.Character;
 using static CSPreALevelSkeleton.Program;
+using System.Reflection.Metadata.Ecma335;
 
 namespace CSPreALevelSkeleton
 {
@@ -104,8 +105,11 @@ namespace CSPreALevelSkeleton
 
         public char GetMove()
         {
+            ConsoleKeyInfo returnedKey;
+            returnedKey = Console.ReadKey();            
             char Move;
-            Move = char.Parse(ReadLineSafely(maxChars:1));
+            //Move = char.Parse(ReadLineSafely(maxChars:1));
+            Move = returnedKey.KeyChar;
             Console.WriteLine();
             return Char.ToUpper(Move);
         }
